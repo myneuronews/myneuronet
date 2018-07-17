@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <title>Wordpress</title>
- <script src="js/jquery.js"></script>
- <script type="text/javascript">
- $(document).ready(function(){
-   $("#login").click(function(){
-     var username = $("#username").val();
-     var password = $("#password").val();
-     var dataString = "username="+username+"&password="+password+"&insecure=cool";
-     $.ajax({
-       type: "POST",
-       url:"http://yoursite.com/api/user/generate_auth_cookie/?",
-       data: dataString,
-       crossDomain: true,
-       cache: false,
-       success: function(data){
-        alert(JSON.stringify(data));
-       }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Wordpress</title>
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#login").click(function(){
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var dataString = "username="+username+"&password="+password+"&insecure=cool";
+        $.ajax({
+            type: "POST",
+            url:"https://myneuronet.com/api/user/generate_auth_cookie/?",
+            data: dataString,
+            crossDomain: true,
+            cache: false,
+            success: function(data){
+              alert(JSON.stringify(data));
+            }
+        });
       });
-    });
-  });
- </script>
+  	});
+  </script>
 </head>
 <body>
- <input type="text" id="username">
- <input type="text" id="password">
- <button id="login">Login</button>
+  <br>
+  <a href="register.html">Register</a>
+  <a href="login.html">Login</a>
+  <input type="text" id="username">
+  <input type="text" id="password">
+  <button id="login">Login</button>
 </body>
 </html>
